@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 
 @Component
-@Profile("prod")
+//@Profile("prod")
 public class EazySchoolUsernamePasswordAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
