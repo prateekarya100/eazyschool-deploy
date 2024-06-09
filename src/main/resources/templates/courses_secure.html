@@ -83,11 +83,17 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="course: ${courses}">
+            <tr th:each="course: ${courses}" sec:authorize="hasRole('ROLE_ADMIN')">
                 <td th:text="${course.courseId}"></td>
                 <td th:text="${course.name}"></td>
                 <td th:text="${course.fees}"></td>
                 <td><a th:href="@{/admin/viewStudents(id=${course.courseId})}" class="btn btn-warning">VIEW STUDENTS</a></td>
+            </tr>
+            <tr th:each="course: ${courses}" sec:authorize="hasRole('ROLE_STUDENT')">
+                <td th:text="${course.courseId}"></td>
+                <td th:text="${course.name}"></td>
+                <td th:text="${course.fees}"></td>
+                <td><a th:href="@{/student/viewStudents(id=${course.courseId})}" class="btn btn-warning">VIEW STUDENTS</a></td>
             </tr>
             </tbody>
         </table>
