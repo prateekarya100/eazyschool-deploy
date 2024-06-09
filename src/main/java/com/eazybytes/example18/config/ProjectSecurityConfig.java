@@ -29,6 +29,7 @@ public class ProjectSecurityConfig  {
                 .requestMatchers("/displayMessages/**").hasRole("ADMIN")
                 .requestMatchers("/closeMsg/**").hasRole("ADMIN")
                 .requestMatchers("/admin/**").hasRole("ADMIN")
+                .requestMatchers("/student/**").hasRole("STUDENT")
                 .requestMatchers("/api/contact/**").hasRole("ADMIN")
                 .requestMatchers("/eazyschool/actuator/**").hasRole("ADMIN")
                 .requestMatchers("/","/home").authenticated()
