@@ -93,11 +93,6 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-2 login-center text-start" sec:authorize="hasRole('ROLE_ADMIN')">
-        <a th:href="@{/dashboard}">
-            <button class="btn btn-style btn-style-3 text-left">BACK</button>
-        </a>
-    </div>
     <div class="col-md-2 login-center text-start" sec:authorize="hasRole('ROLE_STUDENT')">
         <a th:href="@{/dashboard}">
             <button class="btn btn-style btn-style-3 text-left">BACK</button>
