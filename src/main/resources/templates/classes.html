@@ -79,11 +79,16 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="eazyClass: ${eazyClasses}">
+            <tr th:each="eazyClass: ${eazyClasses}" sec:authorize="hasRole('ROLE_ADMIN')">
                 <td th:text="${eazyClass.classId}"></td>
                 <td th:text="${eazyClass.name}"></td>
                 <td><a th:href="@{/admin/displayStudents(classId=${eazyClass.classId})}" class="btn btn-success">VIEW</a></td>
                 <td><a th:href="@{/admin/deleteClass(id=${eazyClass.classId})}" class="btn btn-warning">DELETE</a></td>
+            </tr>
+            <tr th:each="eazyClass: ${eazyClasses}" sec:authorize="hasRole('ROLE_STUDENT')">
+                <td th:text="${eazyClass.classId}"></td>
+                <td th:text="${eazyClass.name}"></td>
+                <td><a th:href="@{/student/displayStudents(classId=${eazyClass.classId})}" class="btn btn-success">VIEW</a></td>
             </tr>
             </tbody>
         </table>
