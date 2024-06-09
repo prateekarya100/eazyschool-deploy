@@ -88,12 +88,12 @@
             <tr th:each="eazyClass: ${eazyClasses}" sec:authorize="hasRole('ROLE_STUDENT')">
                 <td th:text="${eazyClass.classId}"></td>
                 <td th:text="${eazyClass.name}"></td>
-                <td><a th:href="@{/student/displayStudents(classId=${eazyClass.classId})}" class="btn btn-success">VIEW</a></td>
+<!--                <td><a th:href="@{/student/displayStudents(classId=${eazyClass.classId})}" class="btn btn-success">VIEW</a></td>-->
             </tr>
             </tbody>
         </table>
     </div>
-    <div class="col-md-2 login-center text-start" sec:authorize="hasRole('ROLE_STUDENT')">
+    <div class="col-md-2 login-center text-start">
         <a th:href="@{/dashboard}">
             <button class="btn btn-style btn-style-3 text-left">BACK</button>
         </a>
